@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sherzod Nasirov - Soch Bo'yash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(45deg, #ffe6e6, #ffffff);
+      color: #333;
+      overflow-x: hidden;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(135deg, #ff4f81, #8e44ad);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      font-size: 50px;
+      font-family: 'Pacifico', cursive;
+      margin-bottom: 15px;
+      animation: slideInDown 1s ease-out;
+    }
+    header p {
+      font-size: 22px;
+      animation: slideInUp 1s ease-out;
+    }
+    header a {
+      background: #ffcc00;
+      color: black;
+      padding: 14px 28px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 25px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    header a:hover {
+      transform: scale(1.1);
+      background: #e6b800;
+    }
+    .info-section {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      background: #fffafc;
+      padding: 50px 20px;
+      text-align: center;
+      flex-wrap: wrap;
+      animation: fadeIn 2s ease-in-out 0.5s both;
+    }
+    .info-box {
+      font-size: 22px;
+      margin: 10px;
+      animation: zoomIn 1s ease-in-out;
+    }
+    .info-box strong {
+      display: block;
+      font-size: 30px;
+      color: #c0392b;
+      margin-bottom: 10px;
+    }
+    .team-section {
+      background: #f7d9ff;
+      padding: 80px 20px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    .team-section h2 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 40px;
+      font-family: 'Pacifico', cursive;
+    }
+    .team {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .team-member {
+      background: white;
+      border: 3px solid #8e44ad;
+      padding: 20px;
+      text-align: center;
+      width: 220px;
+      border-radius: 18px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: popUp 1s ease-in-out;
+    }
+    .team-member:hover {
+      transform: scale(1.15);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
+    .team-member img {
+      width: 100%;
+      border-radius: 12px;
+      border: 3px solid #ff69b4;
+    }
+    .team-member h3 {
+      margin: 14px 0 8px;
+      font-size: 22px;
+      color: #8e44ad;
+    }
+    .testimonial-section {
+      background: #fff0f5;
+      padding: 70px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .testimonial-section h2 {
+      font-size: 34px;
+      margin-bottom: 30px;
+      font-family: 'Pacifico', cursive;
+    }
+    .testimonial {
+      font-style: italic;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 24px;
+      transition: opacity 1s ease-in-out;
+    }
+    .services-section {
+      padding: 80px 20px;
+      background: #fff;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    .services-section h2 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 40px;
+      font-family: 'Pacifico', cursive;
+    }
+    .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .service-card {
+      background: #ffe6f0;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      width: 260px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .service-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+    .service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #c0392b;
+    }
+    .service-card p {
+      font-size: 16px;
+      color: #666;
+    }
+    .contact-section {
+      background: #ffe6f0;
+      padding: 70px 20px;
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    .contact-section h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 34px;
+      margin-bottom: 30px;
+      color: #c0392b;
+    }
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 14px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      transition: border 0.3s ease;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #8e44ad;
+      outline: none;
+    }
+    .contact-form button {
+      padding: 14px;
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #732d91;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInDown {
+      from { transform: translateY(-100px); opacity: 0; } to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideInUp {
+      from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes popUp {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sochingizga go'zallik baxsh eting</h1>
+    <p>Sherzod Nasirov bilan professional qizlar sochini bo'yash xizmatlari</p>
+    <a href="#xizmatlar">Xizmatlar bilan tanishing</a>
+  </header>
+
+  <div class="info-section">
+    <div class="info-box">
+      <strong>20+</strong>
+      Bo'yash usullari
+    </div>
+    <div class="info-box">
+      <strong>500+</strong>
+      Mamnun mijozlar
+    </div>
+    <div class="info-box">
+      <strong>2+ yil</strong>
+      Tajriba
+    </div>
+  </div>
+
+  <section class="services-section" id="xizmatlar">
+    <h2>Xizmatlar</h2>
+    <div class="services">
+      <div class="service-card">
+        <img src="https://picsum.photos/300/200?random=4" alt="Balayage">
+        <h3>Balayage</h3>
+        <p>Sochingizga tabiiy, quyoshda o‘zgargandek ranglar beruvchi usul.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://picsum.photos/300/200?random=5" alt="Ombre">
+        <h3>Ombre</h3>
+        <p>Qorong‘idan och rangga o‘tuvchi zamonaviy effekt.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://picsum.photos/300/200?random=6" alt="Klassik Bo'yash">
+        <h3>Klassik Bo'yash</h3>
+        <p>Siz istagan har qanday rangda to‘liq yoki qisman bo‘yash.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <h2>Bizning jamoa</h2>
+    <div class="team">
+      <div class="team-member">
+        <img src="https://picsum.photos/200?random=1" alt="Sherzod Nasirov">
+        <h3>Sherzod Nasirov</h3>
+        <p>Soch ustasi</p>
+      </div>
+      <div class="team-member">
+        <img src="https://picsum.photos/200?random=2" alt="Gulnoza">
+        <h3>Gulnoza</h3>
+        <p>Asisstent</p>
+      </div>
+      <div class="team-member">
+        <img src="https://picsum.photos/200?random=3" alt="Dilbar">
+        <h3>Dilbar</h3>
+        <p>Model</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <h2>Mijozlar fikri</h2>
+    <div class="testimonial" id="testimonial-box">
+      “Sochimni birinchi marta bo'yaganimda, Sherzod aka juda professional xizmat ko'rsatdi!”
+    </div>
+  </section>
+
+  
+</head>
+<body>
+  <!-- (Boshqa qismlar o'zgarmagan) -->
+
+  <section class="contact-section">
+    <h2>Bog'lanish</h2>
+    <form class="contact-form" action="mailto:s@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Ismingiz" required>
+      <input type="email" name="email" placeholder="Email manzilingiz" required>
+      <textarea name="message" rows="5" placeholder="Xabaringiz..." required></textarea>
+      <button type="submit">Yuborish</button>
+    </form>
+  </section>
+
+  <!-- (Qolgan script va body tugaydi) -->
+</body>
+</html>
